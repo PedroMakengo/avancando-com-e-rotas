@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <h1>Fazer cadastro</h1>
+    <h1>Aprendendo VueJs</h1>
   </div>
 </template>
 
