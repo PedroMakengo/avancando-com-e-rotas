@@ -27,14 +27,14 @@
     </header>
 
     <main>
-      <section class="container">
-        <div class="loading" v-if="loading">
-          <img src="@/assets/loading.gif" />
-        </div>
-        <div class="items" else>
-          <article v-for="(item, index) in nutri" :key="index">
-            <strong>{{ item.titulo }}</strong>
+      <div class="loading" v-if="loading">
+        <img src="@/assets/loading.gif" />
+      </div>
+      <section class="container" v-else>
+        <div class="items">
+          <article class="item" v-for="(item, index) in nutri" :key="index">
             <img :src="item.capa" />
+            <strong>{{ item.titulo }}</strong>
             <span>Categoria: {{ item.categoria }}</span>
             <p>{{ item.subtitulo }}</p>
           </article>
@@ -88,7 +88,24 @@ main {
   margin-top: 8rem;
 }
 
-.loading {
+main .container .items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  gap: 1rem;
+}
+main .container .items .item {
+  width: 32%;
+  background: #fff;
+  box-shadow: 2px 0 6px #9e9e9e4d;
+}
+
+main .container .items .item img {
+  width: 100%;
+}
+
+main .loading {
   background: #000;
   width: 100%;
   height: 100vh;
