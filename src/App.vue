@@ -33,10 +33,11 @@
       <section class="container" v-else>
         <div class="items">
           <article class="item" v-for="(item, index) in nutri" :key="index">
+            <strong class="category">{{ item.titulo }}</strong>
             <img :src="item.capa" />
-            <strong>{{ item.titulo }}</strong>
             <span>Categoria: {{ item.categoria }}</span>
             <p>{{ item.subtitulo }}</p>
+            <a href="#" class="botao">Acessar</a>
           </article>
         </div>
       </section>
@@ -95,10 +96,34 @@ main .container .items {
 
   gap: 1rem;
 }
+
+main .container .item .category {
+  display: flex;
+  margin-top: 15px;
+}
+
+main .container .item .botao {
+  display: flex;
+  height: 40px;
+  border: 1px;
+  border: 1px solid #9e9e9e4d;
+
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 1rem;
+
+  text-decoration: none;
+}
+
 main .container .items .item {
   width: 32%;
   background: #fff;
   box-shadow: 2px 0 6px #9e9e9e4d;
+
+  border-radius: 5px;
+
+  padding: 0.5rem;
 }
 
 main .container .items .item img {
